@@ -8,11 +8,18 @@ struct Item{
     uint quantity;
     address wallet;
 }
+struct User{
+    string name;
+    uint item_no;
+    uint price;
+    uint quantity;
+}
 
     uint public items = 1;
     address owner = msg.sender;
     mapping(uint=>Item) public item;
-   
+    mapping(address=>User[]) public  user;
+    
     function record_item(string memory _name, uint itemnum, uint _price, uint _quant, address _add) public {
       item[items] = Item({
             name: _name,
@@ -21,6 +28,8 @@ struct Item{
             quantity: _quant,
             wallet: _add
         });
+        User memory newuser = User(_name, itemnum, _price, _quant);
+       user[_add].push(newuser);
         items++;
     }
     function check(uint256 orderno,string memory _name, uint itemnum, uint _price, uint _quant,address _add) external view returns(string memory){
