@@ -15,7 +15,7 @@ struct User{
     uint quantity;
 }
 
-    uint public items = 1;
+    uint public items;
     address owner = msg.sender;
     mapping(uint=>Item) public item;
     mapping(address=>User[]) public  user;
@@ -41,4 +41,8 @@ struct User{
         require(item[orderno].quantity == _quant,"The quantity of the item does not match!");
         return "The item is correct and ready to go!";
     }
+    
+    function get_orders(address _add) external view returns(User[] memory){
+       return user[_add];
+    } 
 }
