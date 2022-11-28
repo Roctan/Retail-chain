@@ -1,0 +1,36 @@
+body{
+ margin: 0;
+ padding: 0;
+}
+
+.signin {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logCard{
+  background-color: ;
+  height: 15rem;
+  width: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly ;
+  flex-direction: column;
+  border: 0.5px black solid;
+  border-radius: 5px;
+}
+
+.logBtn{
+  width: 80%;
+  height: 2rem;
+  background-color: #F7934C;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  
+}
