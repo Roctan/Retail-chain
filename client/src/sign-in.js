@@ -1,12 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"
 import "./css/index.css"
-//onst producer = require("./img/profile.svg")
+
 function Signin(){
+  const navigate = useNavigate();
+  
+  const producerPage =()=>{
+    navigate("/producer")
+  }
+  
+  const wareHousePage = ()=>{
+    navigate("/warehouse")
+  }
+  
   return(
     <div className="signin">
       <div className="logCard">
-        <div className="logBtn">  producer </div>
-        <div className="logBtn">Warehouse</div>
+        <div className="logBtn" onClick={producerPage}>producer </div>
+        <div className="logBtn" onClick={wareHousePage}>Warehouse</div>
       </div>
     </div>
     )
